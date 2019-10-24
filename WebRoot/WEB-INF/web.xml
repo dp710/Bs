@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Forum</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+<!--过滤未登录的用户 --> 
+<filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>com.softeem.filter.loginFilter</filter-class>
+  </filter>
+ <filter-mapping> 
+  <filter-name>loginFilter</filter-name>  
+  <url-pattern>*.jsp</url-pattern> 
+ 
+</filter-mapping> 
+
+
+	    <!-- 解决post提交过滤器配置开始 -->
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>com.softeem.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+ <filter>
+  	<filter-name>TransactionFilter</filter-name>
+  	<filter-class>com.softeem.filter.TransactionFilter</filter-class>
+ </filter>
+  
+  <filter-mapping>
+  	<filter-name>TransactionFilter</filter-name>
+  	<url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>ZoneServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.ZoneServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.UserServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>TopicServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.TopicServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ReplyServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.ReplyServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>SectionServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.SectionServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WaterServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.WaterServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>VisitServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.VisitServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NoticeServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.NoticeServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DormitoryServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.DormitoryServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.StudentServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ElectricServlet</servlet-name>
+    <servlet-class>com.softeem.service.ElectricServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FixServlet</servlet-name>
+    <servlet-class>com.softeem.servlet.FixServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>ZoneServlet</servlet-name>
+    <url-pattern>/ZoneServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TopicServlet</servlet-name>
+    <url-pattern>/TopicServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReplyServlet</servlet-name>
+    <url-pattern>/ReplyServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SectionServlet</servlet-name>
+    <url-pattern>/SectionServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WaterServlet</servlet-name>
+    <url-pattern>/WaterServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VisitServlet</servlet-name>
+    <url-pattern>/VisitServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NoticeServlet</servlet-name>
+    <url-pattern>/NoticeServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DormitoryServlet</servlet-name>
+    <url-pattern>/DormitoryServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/StudentServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ElectricServlet</servlet-name>
+    <url-pattern>/ElectricServlet.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FixServlet</servlet-name>
+    <url-pattern>/FixServlet.action</url-pattern>
+  </servlet-mapping>
+</web-app>
